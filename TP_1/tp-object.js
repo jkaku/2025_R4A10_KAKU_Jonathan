@@ -46,16 +46,21 @@ module.exports = {
   // renvoyer l'objet modifié
   Q6() {
     const objet = getObject();
-    
+    const cle = "hello" + "world";
+    objet[cle] = true
+    return objet;
   },
 
   // 7) Supprimer la propriété isBestObject et renvoyer l'objet
   Q7() {
     const objet = getObject();
+    delete objet.isBestObject;
+    return objet;
   },
 
   // 8) Vérifier que la propriété description existe dans l'objet, renvoyer un booléen
   Q8() {
     const objet = getObject();
+    return "description" in objet;
   },
 };
