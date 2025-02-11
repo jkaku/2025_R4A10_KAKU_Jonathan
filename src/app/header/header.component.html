@@ -1,0 +1,14 @@
+<header>
+    <div class="container">
+        <div>
+            <img src="assets/logo.png" alt="logo"/>
+            <p>Trafalgar</p>
+        </div>
+        <nav>
+            @for (link of links; track $index){
+                <a [href]="link.href">{{link.label}}</a>
+            }
+        </nav>
+    <button>Menu</button>
+    </div>
+</header>

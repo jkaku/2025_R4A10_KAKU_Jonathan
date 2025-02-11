@@ -1,0 +1,32 @@
+<footer class="grid-footer">
+    <div>
+        <img src="logo.png" alt="Logo" />
+        <p>Trafalgar</p>
+        <p>Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online 
+          for everyone</p>
+    </div>
+    <div>
+        <p>Company</p>
+        <ul>
+          @for (link of company; track $index) {
+              <li><a [href]="link.href">{{link.label}}</a></li>
+              }
+        </ul>
+    </div>
+    <div>  
+        <p>>Region</p>
+        <ul>
+          @for (link of region; track $index) {
+              <li><a [href]="link.href">{{link.label}}</a></li>
+              }
+        </ul>
+    </div>
+    <div>  
+        <p>Help</p>
+        <ul>
+          @for (link of help; track $index) {
+              <li><a [href]="link.href">{{link.label}}</a></li>
+              }
+        </ul>
+    </div>
+  </footer>

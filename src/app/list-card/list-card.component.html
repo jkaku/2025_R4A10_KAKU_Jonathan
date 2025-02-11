@@ -1,0 +1,8 @@
+<ul class="grid">
+    @for (card of cards; track card.title){
+    <app-card [cardData]="card" />
+    }
+    @empty {
+    <li>Liste vide</li>
+    }
+  </ul>
