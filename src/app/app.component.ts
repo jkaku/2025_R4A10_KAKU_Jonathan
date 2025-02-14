@@ -12,6 +12,19 @@ export type ListItem = {
   image: string;
 };
 
+export type ListInfo = {
+  title: string;
+  description: string;
+  lien: string;
+};
+
+export type InfoRate = {
+  title: string;
+  description: string;
+  name: string;
+  photo: string;
+};
+
 @Component({
   selector: 'app-root',
   standalone: true,

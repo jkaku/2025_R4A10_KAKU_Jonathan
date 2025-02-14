@@ -12,4 +12,5 @@ import { CardComponent } from '../card/card.component';
 })
 export class ListCardComponent {
   @Input({ required: true }) cards!: ListItem[];
+  @Input({ required: true }) informations!: ListInfo;
 }
