@@ -1,5 +1,6 @@
 import { Component,Input} from '@angular/core';
 import { ListItem } from '../app.component';
+import { ListInfo } from '../app.component';
 import { CardComponent } from '../card/card.component';
 
 
@@ -12,5 +13,5 @@ import { CardComponent } from '../card/card.component';
 })
 export class ListCardComponent {
   @Input({ required: true }) cards!: ListItem[];
-  @Input({ required: true }) informations!: ListInfo;
+  @Input({ required: true }) info!: ListInfo;
 }

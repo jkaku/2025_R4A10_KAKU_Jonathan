@@ -1,0 +1,35 @@
+.grid-footer{
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(4, 1fr);
+    background: rgb(103,195,243);
+    background: linear-gradient(90deg, rgba(103,195,243,1) 0%, rgba(90,152,242,1) 35%);
+    margin: 0%;
+    padding: 1rem;
+    color: white;
+    @media screen and (max-width: 600px){
+      grid-template-columns: repeat(1, 1fr);
+     }
+}
+
+a {
+  color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Espacement entre l'image et le texte
+  
+    img {
+      height: 40px;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
+
+  

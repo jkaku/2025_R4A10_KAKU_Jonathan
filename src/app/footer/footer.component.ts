@@ -8,17 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.sass'
 })
 export class FooterComponent {
-  company = [
-    { label: 'About', href: '' },
-    { label: 'Testimonials', href: '' },
-    { label: 'Find a doctor', href: '' },
-    { label: 'Apps', href: '' },
-  ];
   region = [
     { label: 'Indonesia', href: '' },
     { label: 'Singapore', href: '' },
     { label: 'HongKong', href: '' },
     { label: 'Canda', href: '' },
+  ];
+  company = [
+    { label: 'About', href: '' },
+    { label: 'Testimonials', href: '' },
+    { label: 'Find a doctor', href: '' },
+    { label: 'Apps', href: '' },
   ];
   help = [
     { label: 'Help center', href: '' },
