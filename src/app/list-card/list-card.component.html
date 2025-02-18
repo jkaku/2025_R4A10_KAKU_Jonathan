@@ -2,7 +2,7 @@
 <p>{{info.description}}</p>
 <ul class="grid">
   @for (card of cards; track card.title){
-  <app-list-card [cardData]="card" />
+  <app-card [cardData]="card" />
   }
   @empty {
   <li>Aucun élément dans la liste</li>

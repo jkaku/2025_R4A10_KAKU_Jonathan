@@ -5,7 +5,7 @@ import { RateInfo } from '../app.component'
   standalone: true,
   imports: [],
   templateUrl: './rate.component.html',
-  styleUrl: './rate.component.sass'
+  styleUrl: './rate.component.scss'
 })
 export class RateComponent {
   @Input({required: true}) info!:RateInfo;

@@ -5,7 +5,7 @@ import { ListItem } from '../app.component';
   selector: 'app-card',
   standalone: true,
   templateUrl: './card.component.html',
-  styleUrl: './card.component.sass'
+  styleUrl: './card.component.scss'
 })
 export class CardComponent {
   @Input({ required: true, alias: 'cardData' }) data!: ListItem;

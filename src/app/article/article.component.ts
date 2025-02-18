@@ -6,7 +6,7 @@ import { ListItem } from '../app.component';
   standalone: true,
   imports: [],
   templateUrl: './article.component.html',
-  styleUrl: './article.component.sass'
+  styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
   @Input({ required: true, alias: 'carteData' }) data!: ListItem;

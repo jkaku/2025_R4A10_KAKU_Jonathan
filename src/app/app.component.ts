@@ -28,7 +28,7 @@ export type RateInfo = {
   standalone: true,
   imports: [HeaderComponent, ArticleComponent, ListCardComponent, FooterComponent, RateComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.sass',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
 
@@ -36,17 +36,17 @@ export class AppComponent {
     { title: 'Virtual healthcare for you',
       description: 'Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone',
       link: 'Consult today',
-      image: 'virtualHealth.png',
+      image: 'assets/virtualHealth.png',
     },
     { title: 'Leading healthcare providers',
       description: 'Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone. To us, it’s not just work. We take pride in the solutions we deliver',
       link: 'Learn more',
-      image: 'lhp.png',
+      image: 'assets/lhp.png',
     },
     { title: 'Download our mobile apps',
       description: 'Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely',
       link: 'Download',
-      image: 'dom.png',
+      image: 'assets/dom.png',
     }
   ];
 
@@ -54,52 +54,52 @@ export class AppComponent {
       { 
         title: "Search doctor",
         description: "Choose your doctor from thousands of specialist, general, and trusted hospitals.",
-        image: "services/loupe.png"
+        image: 'assets/services/loupe.png'
       },
       { 
         title: "Online pharmacy",
         description: "Buy your medicines with our mobile application with a simple delivery system.",
-        image: "services/online.png"
+        image: 'assets/services/online.png'
       },
       { 
         title: "Consultation",
         description: "Free consultation with our trusted doctors and get the best recommendations.",
-        image: "services/consultation.png"
+        image: 'assets/services/consultation.png'
       },
       { 
         title: "Details info",
         description: "Free consultation with our trusted doctors and get the best recommendations.",
-        image: "services/detailsinfo.png"
+        image: 'assets/services/detailsinfo.png'
       },
       { 
         title: "Emergency care",
         description: "You can get 24/7 urgent care for yourself or your children and your lovely family.",
-        image: "services/emergency.png"
+        image: 'assets/services/emergency.png'
       },
       { 
         title: "Tracking",
         description: "Track and save your medical history and health data.",
-        image: "services/tracking.png"
+        image: 'assets/services/tracking.png'
       }
-  ]
+  ];
   lateArticleList = [
       { 
           title: "Disease detection, check up in the laboratory",
           description: "In this case, the role of the health laboratory is very important to do a disease detection...",
           link: "Read more",
-          image: "latesteArticle/1.png"
+          image: "assets/lateArticle/1.png"
       },
       { 
           title: "Herbal medicines that are safe for consumption",
           description: "Herbal medicine is very widely used at this time because of its very good for your health...",
           link: "Read more",
-          image: "latesteArticle/2.png"
+          image: "assets/lateArticle/2.png"
       },
       { 
           title: "Natural care for healthy facial skin",
           description: "A healthy lifestyle should start from now and also for your skin health. There are some...",
           link: "Read more",
-          image: "latesteArticle/3.png"
+          image: "assets/lateArticle/3.png"
       }
   ];
   

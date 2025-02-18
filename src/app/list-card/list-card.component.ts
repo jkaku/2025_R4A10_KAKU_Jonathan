@@ -9,7 +9,7 @@ import { CardComponent } from '../card/card.component';
   standalone: true,
   imports: [CardComponent],
   templateUrl: './list-card.component.html',
-  styleUrl: './list-card.component.sass'
+  styleUrl: './list-card.component.scss'
 })
 export class ListCardComponent {
   @Input({ required: true }) cards!: ListItem[];

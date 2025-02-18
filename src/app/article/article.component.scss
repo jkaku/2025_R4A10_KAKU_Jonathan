@@ -19,17 +19,17 @@ div {
     }
   }
   
-  .article {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
   
-  .article__image {
-    max-width: 35rem;
-    height: auto;
-    @media screen and (max-width: 600px){
-      display: none;
-    }
+.article__image {
+  max-width: 35rem;
+  height: auto;
+  @media screen and (max-width: 600px){
+  display: none;
   }
+}
