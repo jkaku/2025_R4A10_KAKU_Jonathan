@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Voyage } from '../models/voyage.model';
 import { BehaviorSubject } from 'rxjs';
+import { DESTINATIONS, DESCRIPTIONS, PRIX } from '../data';
 
 @Injectable({ providedIn: 'root' })
 export class VoyageService {
@@ -39,5 +40,14 @@ export class VoyageService {
     this.voyages = this.voyages.filter(v => v.id !== id);
     this.voyagesSubject.next(this.voyages);
     this.saveToLocalStorage();
+  }
+
+  generateRandomVoyage(): Voyage {
+    const id = Math.random().toString(36).substr(2, 9);
+    const destination = DESTINATIONS[Math.floor(Math.random() * DESTINATIONS.length)];
+    const description = DESCRIPTIONS[Math.floor(Math.random() * DESCRIPTIONS.length)];
+    const prix = PRIX[Math.floor(Math.random() * PRIX.length)];
+
+    return { id, destination, description, prix };
   }
 }

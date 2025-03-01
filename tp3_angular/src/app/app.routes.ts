@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { VoyageDetailComponent } from './components/voyage-detail/voyage-detail.component';
+import { VoyageDetailsComponent } from './components/voyage-details/voyage-details.component';
 import { VoyageGeneratorComponent } from './components/voyage-generator/voyage-generator.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'voyage/:id', component: VoyageDetailComponent },
+  { path: 'voyage/:id', component: VoyageDetailsComponent },
   { path: 'generate', component: VoyageGeneratorComponent },
   { path: '**', component: NotFoundComponent },
 ];

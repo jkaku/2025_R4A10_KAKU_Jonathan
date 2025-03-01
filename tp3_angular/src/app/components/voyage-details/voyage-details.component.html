@@ -1,0 +1,6 @@
+<div *ngIf="voyage">
+  <h2>{{ voyage.destination }}</h2>
+  <p>{{ voyage.description }}</p>
+  <p><strong>Prix :</strong> {{ voyage.prix | currency:'EUR' }}</p>
+  <button class="btn btn-danger" (click)="deleteVoyage()">Supprimer</button>
+</div>

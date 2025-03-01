@@ -1,0 +1,10 @@
+<div>
+    <button class="btn btn-primary" (click)="generateVoyage()">Générer un voyage</button>
+    <div *ngIf="generatedVoyage">
+      <h3>{{ generatedVoyage.destination }}</h3>
+      <p>{{ generatedVoyage.description }}</p>
+      <p><strong>Prix :</strong> {{ generatedVoyage.prix | currency:'EUR' }}</p>
+      <button class="btn btn-success" (click)="addVoyage()">Ajouter</button>
+    </div>
+  </div>
+  

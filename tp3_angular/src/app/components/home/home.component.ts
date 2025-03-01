@@ -38,4 +38,20 @@ export class HomeComponent implements OnInit {
     this.currentPage = page;
     this.updatePagination();
   }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.changePage(this.currentPage - 1);
+    }
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.changePage(this.currentPage + 1);
+    }
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.voyages.length / this.itemsPerPage);
+  }
 }
