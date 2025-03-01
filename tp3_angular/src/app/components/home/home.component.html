@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h2 class="text-center">Liste des voyages</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let voyage of paginatedVoyages">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ voyage.destination }}</h5>
+            <p class="card-text">{{ voyage.description | slice:0:20 }}...</p>
+            <p class="card-text text-primary">{{ voyage.prix | currency:'EUR' }}</p>
+            <a [routerLink]="['/voyage', voyage.id]" class="btn btn-primary">Voir plus</a>
+            <button (click)="deleteVoyage(voyage.id)" class="btn btn-danger">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="changePage(currentPage - 1)">Précédent</button>
+        </li>
+        <li class="page-item" *ngFor="let page of [].constructor(Math.ceil(voyages.length / itemsPerPage)); let i = index">
+          <button class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</button>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === Math.ceil(voyages.length / itemsPerPage)">
+          <button class="page-link" (click)="changePage(currentPage + 1)">Suivant</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
