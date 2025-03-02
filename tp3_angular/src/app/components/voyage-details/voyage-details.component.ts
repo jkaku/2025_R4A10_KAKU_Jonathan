@@ -9,7 +9,7 @@ import { Voyage } from '../../models/voyage.model';
   styleUrls: ['./voyage-details.component.scss']
 })
 export class VoyageDetailsComponent implements OnInit {
-  voyage?: Voyage;
+  voyage: Voyage | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,17 +17,19 @@ export class VoyageDetailsComponent implements OnInit {
     private voyageService: VoyageService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.voyage = this.voyageService.getVoyage(id);
     }
   }
 
-  deleteVoyage() {
-    if (this.voyage) {
-      this.voyageService.deleteVoyage(this.voyage.id);
-      this.router.navigate(['/home']);
+  confirmDelete(): void {
+    if (confirm('Voulez-vous vraiment supprimer ce voyage ?')) {
+      if (this.voyage) {
+        this.voyageService.deleteVoyage(this.voyage.id);
+        this.router.navigate(['/home']);
+      }
     }
   }
 }

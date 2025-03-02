@@ -7,6 +7,8 @@ import { VoyageDetailsComponent } from './components/voyage-details/voyage-detai
 import { VoyageGeneratorComponent } from './components/voyage-generator/voyage-generator.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { VoyageService } from './services/voyage.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { VoyageService } from './services/voyage.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [VoyageService],
   bootstrap: [AppComponent]
