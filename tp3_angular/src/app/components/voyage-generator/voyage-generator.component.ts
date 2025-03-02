@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-voyage-generator',
   templateUrl: './voyage-generator.component.html',
-  styleUrls: ['./voyage-generator.component.css']
+  styleUrls: ['./voyage-generator.component.scss']
 })
 export class VoyageGeneratorComponent {
   generatedVoyage?: Voyage;

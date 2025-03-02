@@ -5,7 +5,7 @@ import { VoyageDetailsComponent } from './components/voyage-details/voyage-detai
 import { VoyageGeneratorComponent } from './components/voyage-generator/voyage-generator.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'voyage/:id', component: VoyageDetailsComponent },
