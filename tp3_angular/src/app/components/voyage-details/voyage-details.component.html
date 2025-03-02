@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <div *ngIf="voyage; else notFound">
+      <h2 class="mb-3">Détails du voyage</h2>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ voyage.destination }}</h4>
+          <p class="card-text"><strong>Description :</strong> {{ voyage.description }}</p>
+          <p class="card-text"><strong>Prix :</strong> {{ voyage.prix | currency:'EUR' }}</p>
+        </div>
+      </div>
+      <div class="mt-3">
+        <button class="btn btn-danger" (click)="confirmDelete()">Supprimer</button>
+        <a class="btn btn-secondary ms-2" routerLink="/home">Retour à la liste</a>
+      </div>
+    </div>
+    <ng-template #notFound>
+      <div class="alert alert-danger">
+        <p>Voyage introuvable.</p>
+        <a class="btn btn-primary" routerLink="/home">Retour à la liste</a>
+      </div>
+    </ng-template>
+  </div>
