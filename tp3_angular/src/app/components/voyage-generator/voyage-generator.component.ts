@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { VoyageService } from '../../services/voyage.service';
 import { Voyage } from '../../models/voyage.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voyage-generator',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./voyage-generator.component.scss']
 })
 export class VoyageGeneratorComponent {
-  generatedVoyage?: Voyage;
+  generatedVoyage: Voyage | undefined;
 
   constructor(private voyageService: VoyageService, private router: Router) {}
 

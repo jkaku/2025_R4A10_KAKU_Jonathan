@@ -6,11 +6,11 @@ import { VoyageGeneratorComponent } from './components/voyage-generator/voyage-g
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'voyage/:id', component: VoyageDetailsComponent },
   { path: 'generate', component: VoyageGeneratorComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

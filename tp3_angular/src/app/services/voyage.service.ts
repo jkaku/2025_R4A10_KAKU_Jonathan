@@ -1,53 +1,62 @@
 import { Injectable } from '@angular/core';
 import { Voyage } from '../models/voyage.model';
-import { BehaviorSubject } from 'rxjs';
-import { DESTINATIONS, DESCRIPTIONS, PRIX } from '../data';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class VoyageService {
   private voyages: Voyage[] = [];
-  private voyagesSubject = new BehaviorSubject<Voyage[]>(this.voyages);
-
-  voyages$ = this.voyagesSubject.asObservable();
 
   constructor() {
-    this.loadFromLocalStorage();
+    this.loadVoyages();
   }
 
-  private saveToLocalStorage() {
-    localStorage.setItem('voyages', JSON.stringify(this.voyages));
-  }
-
-  private loadFromLocalStorage() {
-    const data = localStorage.getItem('voyages');
-    if (data) {
-      this.voyages = JSON.parse(data);
-      this.voyagesSubject.next(this.voyages);
-    }
-  }
-
-  addVoyage(voyage: Voyage) {
-    this.voyages.push(voyage);
-    this.voyagesSubject.next(this.voyages);
-    this.saveToLocalStorage();
+  getVoyages(): Voyage[] {
+    return this.voyages;
   }
 
   getVoyage(id: string): Voyage | undefined {
-    return this.voyages.find(v => v.id === id);
+    return this.voyages.find(voyage => voyage.id === id);
   }
 
-  deleteVoyage(id: string) {
-    this.voyages = this.voyages.filter(v => v.id !== id);
-    this.voyagesSubject.next(this.voyages);
-    this.saveToLocalStorage();
+  addVoyage(voyage: Voyage): void {
+    this.voyages.push(voyage);
+    this.saveVoyages();
+  }
+
+  deleteVoyage(id: string): void {
+    this.voyages = this.voyages.filter(voyage => voyage.id !== id);
+    this.saveVoyages();
   }
 
   generateRandomVoyage(): Voyage {
-    const id = Math.random().toString(36).substr(2, 9);
-    const destination = DESTINATIONS[Math.floor(Math.random() * DESTINATIONS.length)];
-    const description = DESCRIPTIONS[Math.floor(Math.random() * DESCRIPTIONS.length)];
-    const prix = PRIX[Math.floor(Math.random() * PRIX.length)];
+    const destinations = ['Paris', 'New York', 'Tokyo', 'Londres', 'Sydney'];
+    const descriptions = [
+      'Un voyage inoubliable',
+      'Découvrez des paysages magnifiques',
+      'Profitez de la culture locale',
+      'Relaxez-vous sur des plages paradisiaques'
+    ];
+    const randomDestination = destinations[Math.floor(Math.random() * destinations.length)];
+    const randomDescription = descriptions[Math.floor(Math.random() * descriptions.length)];
+    const randomPrice = Math.floor(Math.random() * 1000) + 100;
 
-    return { id, destination, description, prix };
+    return {
+      id: Math.random().toString(36).replace('.', ''),
+      destination: randomDestination,
+      description: randomDescription,
+      prix: randomPrice
+    };
+  }
+
+  private saveVoyages(): void {
+    localStorage.setItem('voyages', JSON.stringify(this.voyages));
+  }
+
+  private loadVoyages(): void {
+    const savedVoyages = localStorage.getItem('voyages');
+    if (savedVoyages) {
+      this.voyages = JSON.parse(savedVoyages);
+    }
   }
 }
