@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { VoyageService } from '../../services/voyage.service';
 import { Voyage } from '../../models/voyage.model';
 
@@ -8,42 +8,42 @@ import { Voyage } from '../../models/voyage.model';
   styleUrls: ['./home.component.scss'],
   standalone : false
 })
-export class HomeComponent implements OnInit {
-  voyages: Voyage[] = [];
-  paginatedVoyages: Voyage[] = [];
+
+export class HomeComponent {
+  voyages: Voyage[];
   currentPage = 1;
   itemsPerPage = 20;
+  paginatedVoyages: Voyage[];
 
-  constructor(private voyageService: VoyageService) {}
-
-  ngOnInit(): void {
+  constructor(private voyageService: VoyageService) {
     this.voyages = this.voyageService.getVoyages();
-    this.updatePagination();
+    this.paginatedVoyages = this.updatePagination();
   }
 
   deleteVoyage(id: string): void {
     if (confirm('Voulez-vous vraiment supprimer ce voyage ?')) {
       this.voyageService.deleteVoyage(id);
-      this.updatePagination();
+      this.voyages = this.voyageService.getVoyages();
+      this.paginatedVoyages = this.updatePagination();
     }
   }
 
-  updatePagination(): void {
+  updatePagination(): Voyage[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    this.paginatedVoyages = this.voyages.slice(startIndex, startIndex + this.itemsPerPage);
+    return this.voyages.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
   nextPage(): void {
     if (this.currentPage * this.itemsPerPage < this.voyages.length) {
       this.currentPage++;
-      this.updatePagination();
+      this.paginatedVoyages = this.updatePagination();
     }
   }
 
   previousPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
-      this.updatePagination();
+      this.paginatedVoyages = this.updatePagination();
     }
   }
 }

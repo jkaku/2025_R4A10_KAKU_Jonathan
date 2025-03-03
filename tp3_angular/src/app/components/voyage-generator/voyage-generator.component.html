@@ -1,9 +1,11 @@
 <div class="container mt-4">
-    <button class="btn btn-primary" (click)="generateVoyage()">Générer un voyage</button>
-    <div *ngIf="generatedVoyage" class="mt-3">
+  <button class="btn btn-primary" (click)="generateVoyage()">Générer un voyage</button>
+  @if (generatedVoyage) {
+    <div class="mt-3">
       <h3>{{ generatedVoyage.destination }}</h3>
       <p>{{ generatedVoyage.description }}</p>
       <p><strong>Prix :</strong> {{ generatedVoyage.prix | currency:'EUR' }}</p>
       <button class="btn btn-success" (click)="addVoyage()">Ajouter</button>
     </div>
-  </div>
+  }
+</div>
