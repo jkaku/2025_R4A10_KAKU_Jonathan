@@ -1,1 +1,27 @@
-<p>create-book-page works!</p>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="author">Author :</label>
+    <input type="text" id="author" formControlName="author" />
+    @if (bookForm.get('author')?.invalid && bookForm.get('author')?.touched) {
+    <p>
+      Auteur requis (min. 5 caractères)
+    </p>
+    }
+  
+    <label for="description">Description :</label>
+    <input type="text" id="description" formControlName="description" />
+    @if (bookForm.get('description')?.invalid && bookForm.get('description')?.touched) {
+    <p>
+        Description requis (min. 10 caractères)
+    </p>
+    }
+
+    <label for="title">Titre :</label>
+    <input type="text" id="title" formControlName="title" />
+    @if (bookForm.get('title')?.invalid && bookForm.get('title')?.touched) {
+    <p>
+      Titre requis (min. 2 caractères)
+    </p>
+    }
+  
+    <button type="submit" [disabled]="bookForm.invalid">Créer</button>
+  </form>
